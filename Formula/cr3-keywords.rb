@@ -1,29 +1,29 @@
 class Cr3Keywords < Formula
   desc "Local Lightroom AI keywording and captioning pipeline for Canon CR3 photos"
   homepage "https://github.com/gobbi9/cr3-keywords"
-  version "0.2.2"
+  version "0.2.3"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/gobbi9/cr3-keywords/releases/download/v0.2.2/cr3_0.2.2_darwin-arm64"
-      sha256 "19741fc2147d7302fe180278dcaac3bb3554aca40ba25cd9b8a5657e1fc16d5f"
+      url "https://github.com/gobbi9/cr3-keywords/releases/download/v0.2.3/cr3_0.2.3_darwin-arm64"
+      sha256 "00a9fbb7c30cda3e67c32b46b21511c58ac79c576c7ef7d3085289a88d04f854"
     else
-      url "https://github.com/gobbi9/cr3-keywords/releases/download/v0.2.2/cr3_0.2.2_darwin-amd64"
-      sha256 "dd2a88e01e78501f20e3eced9e70a5e2b0e604f44c6a7b04072517def0c2158d"
+      url "https://github.com/gobbi9/cr3-keywords/releases/download/v0.2.3/cr3_0.2.3_darwin-amd64"
+      sha256 "488227c15a3c00d1b1cf84628d1cdc2a7f53975fc90e9ef11592ddb19186066c"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/gobbi9/cr3-keywords/releases/download/v0.2.2/cr3_0.2.2_linux-amd64"
-      sha256 "9d247c09fa01fef0b8047ffce1bc8c8327eadcc8d517d5da2d21f1a61dfc420a"
+      url "https://github.com/gobbi9/cr3-keywords/releases/download/v0.2.3/cr3_0.2.3_linux-amd64"
+      sha256 "e90eaad1ec288257979157805ffdb2303096f7be73cf36c1acb60b98a09ecf2b"
     else
       odie "Unsupported architecture: #{Hardware::CPU.arch}"
     end
   end
 
   def install
-    bin.install Dir["cr3_0.2.2_*"] .first => "cr3"
+    bin.install Dir["cr3_0.2.3_*"] .first => "cr3"
   end
 
   test do
